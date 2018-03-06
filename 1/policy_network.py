@@ -19,9 +19,9 @@ def pull_bandit(bandit):
 if __name__ == '__main__':
     tf.reset_default_graph()
 
-    # action network
+    # policy network
     weights = tf.Variable(tf.ones([num_arms]))
-    output = tf.nn.softmax(weights, name="action_output")
+    output = tf.nn.softmax(weights, name="policy output")
 
     reward_holder = tf.placeholder(shape=[1], dtype=tf.float32, name='reward_holder')
     action_holder = tf.placeholder(shape=[1], dtype=tf.int32, name='action_holder')
